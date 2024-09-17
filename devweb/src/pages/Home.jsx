@@ -5,11 +5,11 @@ import '../css/Home.css';
 const Home = () => {
   return (
     <div className="home-content">
-      <h1 className="home-title">Title</h1>
+      <h1 className="home-title">Empresa</h1>
       <p className="home-subtitle">Subtitle</p>
       <div className="home-buttons">
-        <Button text="Button" type="secondary" />
-        <Button text="Button" type="primary" />
+        {/*<Button text="Login" type="secondary" /> */}
+        {/*<Button text="Cadastro" type="primary" /> */}
       </div>
     </div>
   );

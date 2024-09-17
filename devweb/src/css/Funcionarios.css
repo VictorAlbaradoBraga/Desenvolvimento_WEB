@@ -1,0 +1,123 @@
+/* Estilos gerais do container de funcionários */
+.func-content {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilos para o topo da seção de funcionários (título e barra de busca) */
+  .func-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .func-title h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  /* Estilos da caixa de busca */
+  .search-box {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .search-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-box-input {
+    padding: 10px 40px 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 300px;
+    font-size: 16px;
+  }
+  
+  .search-box-button {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .search-icon {
+    font-size: 16px;
+  }
+  
+  .adc-func {
+    margin-left: 20px;
+  }
+  
+  /* Estilos da tabela de funcionários */
+  .list-func table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .list-func th,
+  .list-func td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .list-func th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .list-func td {
+    background-color: #fff;
+  }
+  
+  .list-func .edit-btn,
+  .list-func .delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .list-func .edit-btn {
+    margin-right: 10px;
+    color: #4CAF50;
+  }
+  
+  .list-func .delete-btn {
+    color: #f44336;
+  }
+  
+  .list-func tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  /* Adicionando responsividade */
+  @media (max-width: 768px) {
+    .func-top {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .adc-func {
+      margin-top: 15px;
+    }
+  
+    .search-box-input {
+      width: 100%;
+    }
+  }
+  
