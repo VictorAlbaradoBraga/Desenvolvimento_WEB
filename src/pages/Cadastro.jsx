@@ -21,7 +21,7 @@ const Cadastro = () => {
 
         try {
             // Enviando dados para o backend (requisição POST para cadastro)
-            const response = await fetch('https://back-prodfunc-omega.vercel.app/api/auth', {
+            const response = await fetch('https://back-prodfunc-omega.vercel.app/api/auth/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
