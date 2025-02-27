@@ -13,13 +13,35 @@ const Cadastro = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        
         if (password !== confirmPassword) {
             setError('As senhas não coincidem!');
             return;
         }
-        // Lógica de envio para o backend
-        // (Substitua pelo fetch para seu backend)
-        navigate('/produtos');
+
+        try {
+            // Enviando dados para o backend (requisição POST para cadastro)
+            const response = await fetch('https://back-prodfunc-omega.vercel.app/api/auth', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password }),
+            });
+
+            if (response.ok) {
+                // Se o cadastro for bem-sucedido, redirecionar para /produtos
+                const data = await response.json();
+                const token = data.token; // O token recebido do backend
+                localStorage.setItem('authToken', token);
+                navigate('/produtos');
+            } else {
+                const errorData = await response.json();
+                setError(errorData.error || 'Erro ao fazer cadastro');
+            }
+        } catch (err) {
+            setError('Erro de conexão com o servidor');
+        }
     };
 
     return (
@@ -45,7 +67,7 @@ const Cadastro = () => {
                         />
                         <span 
                             className="visibility-icon" 
-                            onClick={() => setPasswordVisible(!passwordVisible)}>
+                            onClick={() => setPasswordVisible(!passwordVisible)} >
                             👁️
                         </span>
                     </div>
@@ -59,7 +81,7 @@ const Cadastro = () => {
                         />
                         <span 
                             className="visibility-icon" 
-                            onClick={() => setConfirmPasswordVisible(!confirmPasswordVisible)}>
+                            onClick={() => setConfirmPasswordVisible(!confirmPasswordVisible)} >
                             👁️
                         </span>
                     </div>
