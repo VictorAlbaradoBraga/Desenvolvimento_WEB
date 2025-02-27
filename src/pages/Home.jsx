@@ -1,19 +1,37 @@
 import React, { useEffect } from 'react';
-import { getAuth } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import '../css/Home.css';
 
 const Home = () => {
   const navigate = useNavigate();
-  const auth = getAuth();
 
   useEffect(() => {
-    const user = auth.currentUser;
-    if (user) {
-      // Se o usuário estiver logado, redireciona para a página de funcionários ou produtos
-      navigate('/funcionarios');
-    }
-  }, [auth, navigate]);
+    const checkAuth = async () => {
+      const token = localStorage.getItem('token'); // Pegue o token armazenado
+
+      if (token) {
+        try {
+          const response = await fetch('/api/auth/validate', {
+            method: 'GET',
+            headers: {
+              'Authorization': `Bearer ${token}`, // Envia o token no cabeçalho
+            },
+          });
+
+          if (response.ok) {
+            // Se o token for válido, redireciona para a página de funcionários
+            navigate('/funcionarios');
+          } else {
+            console.log('Token inválido ou expirado');
+          }
+        } catch (error) {
+          console.error('Erro ao verificar autenticação:', error);
+        }
+      }
+    };
+
+    checkAuth();
+  }, [navigate]);
 
   return (
     <div className="home-container">
