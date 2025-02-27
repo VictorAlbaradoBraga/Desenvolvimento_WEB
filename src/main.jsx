@@ -6,6 +6,8 @@ import Layout from './layouts/Layout.jsx';
 import Home from './pages/Home.jsx';
 import Funcionarios from './pages/Funcionarios.jsx';
 import Produtos from './pages/Produtos.jsx';
+import Cadastro from './pages/Cadastro.jsx';
+import Login from './pages/Login.jsx';
 
 const queryClient = new QueryClient();
 
@@ -16,6 +18,8 @@ const router = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/funcionarios", element: <Funcionarios /> },
       { path: "/produtos", element: <Produtos /> },
+      { path: "/cadastro", element: <Cadastro /> },
+      { path: "/login", element: <Login /> },
 
     ],
   },
