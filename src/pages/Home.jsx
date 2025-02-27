@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/Home.css';
 
 const Home = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,7 +21,7 @@ const Home = () => {
 
           if (response.ok) {
             // Se o token for válido, redireciona para a página de funcionários
-            navigate('/funcionarios');
+            setIsLoggedIn(true);
           } else {
             console.log('Token inválido ou expirado');
           }
@@ -31,7 +32,7 @@ const Home = () => {
     };
 
     checkAuth();
-  }, [navigate]);
+  }, []);
 
   return (
     <div className="home-container">
@@ -39,10 +40,14 @@ const Home = () => {
       <div className="home-content">
         <h1 className="home-title">Bem-vindo à Empresa</h1>
         <p className="home-subtitle">Gerencie seus funcionários e produtos de forma eficiente</p>
-        <div className="home-buttons">
-          <a href="/login" className="btn primary">Login</a>
-          <a href="/cadastro" className="btn secondary">Cadastro</a>
-        </div>
+        
+        {/* Exibe os botões de Login e Cadastro apenas se não estiver logado */}
+        {!isLoggedIn && (
+          <div className="home-buttons">
+            <a href="/login" className="btn primary">Login</a>
+            <a href="/cadastro" className="btn secondary">Cadastro</a>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -1,24 +1,82 @@
+/* Estilo da Header */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  .logo a{
-    text-decoration: none;
-  }
-  
-  .nav {
-    display: flex;
-    gap: 15px;
-  }
-  .nav a {
-    text-decoration: none;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Estilo do Logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo a {
+  text-decoration: none;
+  color: #333;  /* Cor do logo */
+}
+
+/* Estilo da Navegação */
+.nav {
+  display: flex;
+  gap: 15px;
+  align-items: center; /* Alinha verticalmente os itens */
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;  /* Cor dos links */
+  font-size: 16px;
+}
+
+.nav a:hover {
+  color: #007bff; /* Cor ao passar o mouse sobre os links */
+}
+
+/* Estilo do Ícone de Perfil */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;  /* Torna o ícone redondo */
+  background-color: #f0f0f0;  /* Cor de fundo do ícone de perfil */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #333;
+}
+
+.profile button {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.profile button:hover {
+  background-color: #f0f0f0;
+  color: #007bff;
+}
+
+/* Estilo do Link de Login */
+.auth-links a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.auth-links a:hover {
+  text-decoration: underline;
+}
