@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../css/Header.css';
+import img from '../assets/icons8-male-user-48.png';
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -33,7 +34,7 @@ const Header = () => {
         {isLoggedIn ? (
           <div className="profile">
             <img
-              src="https://via.placeholder.com/40" // Coloque a URL do seu ícone de perfil
+              src={img} // Coloque a URL do seu ícone de perfil
               alt="Perfil"
               className="profile-icon"
             />
