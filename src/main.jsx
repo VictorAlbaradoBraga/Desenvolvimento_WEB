@@ -8,6 +8,7 @@ import Funcionarios from './pages/Funcionarios.jsx';
 import Produtos from './pages/Produtos.jsx';
 import Cadastro from './pages/Cadastro.jsx';
 import Login from './pages/Login.jsx';
+import Teste from './pages/Teste.jsx';
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       { path: "/produtos", element: <Produtos /> },
       { path: "/cadastro", element: <Cadastro /> },
       { path: "/login", element: <Login /> },
+      { path: "/teste", element: <Teste/>},
 
     ],
   },
