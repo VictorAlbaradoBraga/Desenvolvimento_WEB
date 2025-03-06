@@ -13,7 +13,7 @@ const Login = () => {
 
         try {
             // Enviando dados para o backend (requisição POST para login)
-            const response = await fetch('https://back-prodfunc-omega.vercel.app/api/auth/login', {
+            const response = await fetch('https://back-prodfunc-omega.vercel.app/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
